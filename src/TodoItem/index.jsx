@@ -1,4 +1,6 @@
 import React from "react"
+import { CompleteIcon } from "../TodoIcon/CompleteIcon"
+import { DeleteIcon } from "../TodoIcon/DeleteIcon"
 import "./TodoItem.css"
 
 function TodoItem(props) {
@@ -10,7 +12,10 @@ function TodoItem(props) {
                 }`}
                 onClick={props.onComplete}
             >
-                √
+                <CompleteIcon
+                    completed={props.completed}
+                    onComplete={props.onComplete}
+                />
             </span>
 
             <p
@@ -21,7 +26,7 @@ function TodoItem(props) {
                 {props.text}
             </p>
             <span className="Icon Icon-delete" onClick={props.onDelete}>
-                X
+                <DeleteIcon onDelete={props.onDelete} />
             </span>
         </li>
     )
