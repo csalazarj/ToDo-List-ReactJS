@@ -10,14 +10,12 @@
 .Icon-container--check{
     position: absolute;
     left: 12px;
-    border: solid red;
 }
 
 .Icon-container--delete{
     position: absolute;
     top: -24px;
     right: 0;
-    border: solid red;
 
 }
 
