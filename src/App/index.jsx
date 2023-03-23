@@ -12,14 +12,6 @@ import { TodosLoading } from "../TodosLoading"
 import { EmptyTodos } from "../EmptyTodos"
 import { TodosError } from "../TodosError"
 
-// const defaultTodos = [
-//     { text: "Cortar cebolla", completed: true },
-//     { text: "Tomar el curso de intro a react", completed: true },
-//     { text: "Comer chocolate", completed: false },
-//     { text: "Comer pollo", completed: false },
-//     { text: "Hacer tares", completed: false },
-// ]
-
 function App() {
     const {
         error,
@@ -54,10 +46,25 @@ function App() {
                 error={error}
                 loading={loading}
                 searchedTodos={searchedTodos}
+                totalTodos={totalTodos}
+                searchText={searchValue}
                 onError={() => <TodosError />}
                 onLoading={() => <TodosLoading />}
-                onEmpty={() => <EmptyTodos />}
-                render={(todo) => (
+                onEmptyTodos={() => <EmptyTodos />}
+                onEmptySearchResult={(searchText) => (
+                    <p>No ha resultados para {searchText}</p>
+                )}
+                // render={(todo) => (
+                //     <TodoItem
+                //         key={todo.text}
+                //         text={todo.text}
+                //         completed={todo.completed}
+                //         onComplete={() => completeTodo(todo.text)}
+                //         onDelete={() => deleteTodo(todo.text)}
+                //     />
+                // )}
+            >
+                {(todo) => (
                     <TodoItem
                         key={todo.text}
                         text={todo.text}
@@ -66,22 +73,7 @@ function App() {
                         onDelete={() => deleteTodo(todo.text)}
                     />
                 )}
-            />
-
-            {/* <TodoList>
-                {error && <TodosError error={error} />}
-                {loading && <TodosLoading />}
-                {!loading && !searchedTodos.length && <EmptyTodos />}
-                {searchedTodos.map((todo) => (
-                    <TodoItem
-                        key={todo.text}
-                        text={todo.text}
-                        completed={todo.completed}
-                        onComplete={() => completeTodo(todo.text)}
-                        onDelete={() => deleteTodo(todo.text)}
-                    />
-                ))}
-            </TodoList> */}
+            </TodoList>
 
             {!!openModal && (
                 <Modal>
