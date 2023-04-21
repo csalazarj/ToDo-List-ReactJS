@@ -10,7 +10,7 @@
   
 .TodoItem-p {
   margin: 24px 0 24px 24px;
-  width: calc(100% - 120px);
+  width: calc(100% - 150px);
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -33,11 +33,11 @@
 .Icon-check {
   position: absolute;
   left: 12px;
-  background-color: #dedede7e;
+  /* background-color: #dedede7e; */
 }
-.Icon-check:hover {
+/* .Icon-check:hover {
   background-color: #223e277e;
-}
+} */
 .Icon-check--active {
   color: #4caf50;
 }

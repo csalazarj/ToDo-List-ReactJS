@@ -4,12 +4,11 @@ import "./TodoForm.css"
 function TodoForm({ addTodo, setOpenModal }) {
     const [newTodoValue, setNewTodoValue] = React.useState("")
 
-    const onCancel = () => {
-        setOpenModal(false)
-    }
-
     const onChange = (event) => {
         setNewTodoValue(event.target.value)
+    }
+    const onCancel = () => {
+        setOpenModal(false)
     }
     const onSubmit = (event) => {
         event.preventDefault()
